@@ -14,6 +14,13 @@ learning_rate (default: 200.0): The learning rate for t-SNE is usually in the ra
 n_iter (default: 1000): Maximum number of iterations for the optimization. Should be at least 250.
 method (default: ‘barnes_hut’): Barnes-Hut approximation runs in O(NlogN) time. method=’exact’ will run on the slower, but exact, algorithm in O(N^2) time.
 
+Key differences between PCA and t-SNE:
+1) t-SNE is computationally expensive and can take several hours on million-sample datasets where PCA will finish in seconds or minutes.
+2) PCA it is a mathematical technique, but t-SNE is a probabilistic one.
+3) Linear dimensionality reduction algorithms, like PCA, concentrate on placing dissimilar data points far apart in a lower dimension representation. But in order to represent high dimension data on low dimension, non-linear manifold, it is essential that similar data points must be represented close together, which is something t-SNE does not PCA.
+4) Sometimes in t-SNE different runs with the same hyperparameters may produce different results hence multiple plots must be observed before making any assessment with t-SNE, while this is not the case with PCA.
+5) Since PCA is a linear algorithm, it will not be able to interpret the complex polynomial relationship between features while t-SNE is made to capture exactly that.
+
 Source: https://www.datacamp.com/community/tutorials/introduction-t-sne
 
 Dataset Used:
